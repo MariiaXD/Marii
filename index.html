@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Input+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Input Mono', monospace;
+            background-color: #f8f9fa;
+            color: #212529;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+
+        .section {
+            margin: 2em 0;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: auto;
+        }
+
+        .language-switch {
+            margin: 1em;
+        }
+
+        .language-switch button {
+            background: none;
+            border: 1px solid #343a40;
+            padding: 0.5em;
+            cursor: pointer;
+            font-family: 'Input Mono', monospace;
+        }
+
+        .language-switch button:hover {
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
+    <script>
+        const translations = {
+            en: {
+                architecture: 'Architecture',
+                design: 'Design',
+                drawing: 'Drawing',
+                photography: 'Photography',
+                logos: 'Logo Design',
+                greeting: 'Welcome to my creative portfolio!',
+            },
+            ru: {
+                architecture: 'Архитектура',
+                design: 'Дизайн',
+                drawing: 'Рисунок',
+                photography: 'Фотография',
+                logos: 'Создание логотипов',
+                greeting: 'Добро пожаловать в мой творческий портфель!',
+            },
+            de: {
+                architecture: 'Architektur',
+                design: 'Design',
+                drawing: 'Zeichnung',
+                photography: 'Fotografie',
+                logos: 'Logogestaltung',
+                greeting: 'Willkommen in meinem kreativen Portfolio!',
+            },
+        };
+
+        function setLanguage(lang) {
+            document.getElementById('greeting').innerText = translations[lang].greeting;
+            document.getElementById('architecture').innerText = translations[lang].architecture;
+            document.getElementById('design').innerText = translations[lang].design;
+            document.getElementById('drawing').innerText = translations[lang].drawing;
+            document.getElementById('photography').innerText = translations[lang].photography;
+            document.getElementById('logos').innerText = translations[lang].logos;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Creative Portfolio</h1>
+        <nav>
+            <a href="#architecture" id="architecture">Architecture</a>
+            <a href="#design" id="design">Design</a>
+            <a href="#drawing" id="drawing">Drawing</a>
+            <a href="#photography" id="photography">Photography</a>
+            <a href="#logos" id="logos">Logo Design</a>
+        </nav>
+    </header>
+    <main>
+        <div class="language-switch">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('ru')">Русский</button>
+            <button onclick="setLanguage('de')">Deutsch</button>
+        </div>
+        <h2 id="greeting">Welcome to my creative portfolio!</h2>
+        <div class="section" id="architecture-section">
+            <h2 id="architecture">Architecture</h2>
+            <p>Explore my architectural projects and concepts.</p>
+        </div>
+        <div class="section" id="design-section">
+            <h2 id="design">Design</h2>
+            <p>Discover innovative designs and creative solutions.</p>
+        </div>
+        <div class="section" id="drawing-section">
+            <h2 id="drawing">Drawing</h2>
+            <p>Browse through my collection of sketches and artworks.</p>
+        </div>
+        <div class="section" id="photography-section">
+            <h2 id="photography">Photography</h2>
+            <p>View my favorite photographic moments.</p>
+        </div>
+        <div class="section" id="logos-section">
+            <h2 id="logos">Logo Design</h2>
+            <p>See the logos I have crafted for various brands.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Creative Portfolio</p>
+    </footer>
+</body>
+</html>
+
